@@ -131,7 +131,7 @@ module.exports = function (grunt) {
 		//use spawn so we don't have to depend on process.exit();
 		var child = grunt.util.spawn(
 			{
-				cmd: 'node',
+				cmd: (context.options.node !== null) ? context.options.node : 'node',
 				args: args,
 				opts: {
 					cwd: (context.options.cwd !== null) ? context.options.cwd : path.dirname(src)
